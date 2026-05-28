@@ -45,14 +45,11 @@ function loginScreen({ navigation }) {
 
       <Image
         style={styles.image}
-        source={require('../../assets/images/contatos.png')}
+        source={require('../../assets/images/fotoperfil.png')}
       />
 
-      <Text style={styles.title}>Daiane Santos</Text>
-
-      <Text style={styles.title2}>
-        dai@gmail.com
-      </Text>
+              <Text style={styles.title2}> {auth.currentUser?.email}</Text>
+      
 
       
       <TextInput
@@ -99,13 +96,12 @@ const styles = StyleSheet.create({
     fontSize: 20,
     marginBottom: 40,
     textAlign: 'center',
-    fontWeight: 'bold',
-    color: '#091c5c'
+    color: '#111731'
   },
 
   image: {
-    width: 100,
-    height: 100,
+    width: 120,
+    height: 120,
     borderRadius: 100,
     alignSelf: 'center',
     marginBottom: 20

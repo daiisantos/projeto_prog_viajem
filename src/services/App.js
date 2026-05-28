@@ -74,8 +74,8 @@ function App() {
             title: '',
             headerTitleAlign: 'center',
             headerTitleStyle: { fontWeight: 'bold' },
-            headerTintColor: '#283f4e',
-            headerStyle: { backgroundColor: '#d9ebff' }
+            headerTintColor: '#ffffff',
+            headerStyle: { backgroundColor: '#2F6FDB' }
           }}
         />
 

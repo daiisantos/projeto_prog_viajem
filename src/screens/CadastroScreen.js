@@ -12,8 +12,11 @@ function registerScreen({ navigation }) {
   const registerUser = () => {
     createUserWithEmailAndPassword(auth, email, senha)
       .then((userCredential) => {
+alert('Usuário cadastrado com sucesso!');
         navigation.goBack();
+
       })
+      
       .catch((error) => {
         console.log(error.code, error.message);
         alert('Erro ao cadastrar usuário');
@@ -48,7 +51,10 @@ function registerScreen({ navigation }) {
 
       <TouchableOpacity style={styles.button} onPress={registerUser}>
         <Text style={styles.buttonText}>Cadastrar</Text>
+
+        
       </TouchableOpacity>
+      
 
       <TouchableOpacity onPress={() => navigation.goBack()}>
         <Text style={styles.link}>Voltar para login</Text>

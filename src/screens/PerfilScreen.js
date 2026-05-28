@@ -65,7 +65,6 @@ function PerfilScreen({ navigation }) {
 
         <Text style={styles.title}> {auth.currentUser?.email}</Text>
 
-        {/funcao logout/}
 
         <TouchableOpacity
           style={styles.button}
