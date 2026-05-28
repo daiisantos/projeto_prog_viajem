@@ -67,11 +67,15 @@ function App() {
           }}
         />
 
-        <Stack.Screen
+         <Stack.Screen
           name="Perfil"
           component={PerfilScreen}
           options={{
-            headerShown: false
+            title: '',
+            headerTitleAlign: 'center',
+            headerTitleStyle: { fontWeight: 'bold' },
+            headerTintColor: '#283f4e',
+            headerStyle: { backgroundColor: '#d9ebff' }
           }}
         />
 
