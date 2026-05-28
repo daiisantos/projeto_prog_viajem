@@ -227,7 +227,7 @@ export default function InitialScreen() {
           </Text>
         </TouchableOpacity>
 
-        <TouchableOpacity  onPress={() => navigation.navigate('Perfil')}
+        <TouchableOpacity onPress={() => navigation.navigate('Favoritos')}
           style={{
             alignItems: 'center'
           }}
@@ -249,7 +249,7 @@ export default function InitialScreen() {
           </Text>
         </TouchableOpacity>
 
-        <TouchableOpacity
+        <TouchableOpacity   onPress={() => navigation.navigate('Perfil')}
           style={{
             alignItems: 'center'
           }}

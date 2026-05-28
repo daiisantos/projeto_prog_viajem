@@ -10,7 +10,7 @@ import CadastroScreen from '../screens/CadastroScreen';
 import AlterarSenhaScreen from '../screens/AlterarSenhaScreen';
 import PerfilScreen from '../screens/PerfilScreen';
 import DetalharScreen from '../screens/DetalharScreen';
-
+import FavoritosScreen from '../screens/FavoritosScreen';
 
 
 
@@ -55,8 +55,11 @@ function App() {
             headerShown: false
           }}
         />
-
-          <Stack.Screen
+        <Stack.Screen
+          name="Favoritos"
+          component={FavoritosScreen}
+        />
+        <Stack.Screen
           name="Detalhar"
           component={DetalharScreen}
           options={{
@@ -64,7 +67,7 @@ function App() {
           }}
         />
 
-         <Stack.Screen
+        <Stack.Screen
           name="Perfil"
           component={PerfilScreen}
           options={{
@@ -72,7 +75,7 @@ function App() {
           }}
         />
 
-         <Stack.Screen
+        <Stack.Screen
           name="AlterarSenhaScreen"
           component={AlterarSenhaScreen}
           options={{
@@ -83,7 +86,7 @@ function App() {
             headerStyle: { backgroundColor: '#d9ebff' }
           }} />
 
-        
+
 
         <Stack.Screen
           name="Cadastro"
@@ -97,7 +100,7 @@ function App() {
           }}
         />
 
-        
+
 
       </Stack.Navigator>
 

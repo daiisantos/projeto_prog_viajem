@@ -12,10 +12,9 @@ import {
   TouchableOpacity
 } from 'react-native';
 
-export default function DetailsScreen({ route }) {
+export default function DetalharScreen({ route }) {
 
   const navigation = useNavigation();
-
   const { countryName } = route.params;
 
   const [country, setCountry] = useState(null);
@@ -64,30 +63,27 @@ export default function DetailsScreen({ route }) {
       backgroundColor: '#F3F6FB'
     }}>
 
-     <TouchableOpacity
-  onPress={() => navigation.goBack()}
-  style={{
-    position:'absolute',
-    top:50,
-    left:20,
-    zIndex:10,
-    backgroundColor:'rgba(0,0,0,0.4)',
-    width:40,
-    height:40,
-    borderRadius:20,
-    justifyContent:'center',
-    alignItems:'center'
-  }}
->
-
-  <AntDesign
-    name="left"
-    size={22}
-    color="#fff"
-  />
-
-
-
+      {/* BOTÃO VOLTAR */}
+      <TouchableOpacity
+        onPress={() => navigation.goBack()}
+        style={{
+          position: 'absolute',
+          top: 50,
+          left: 20,
+          zIndex: 10,
+          backgroundColor: 'rgba(0,0,0,0.4)',
+          width: 40,
+          height: 40,
+          borderRadius: 20,
+          justifyContent: 'center',
+          alignItems: 'center'
+        }}
+      >
+        <AntDesign
+          name="left"
+          size={22}
+          color="#fff"
+        />
       </TouchableOpacity>
 
       {/* IMAGEM GRANDE */}
@@ -139,29 +135,73 @@ export default function DetailsScreen({ route }) {
           {country.name.official}
         </Text>
 
-  <Info
-  icon="pushpin"
-  label="Capital"
-  value={country.capital?.[0]}
-/>
+        {/* INFORMAÇÕES */}
+        <Info
+          icon="pushpin"
+          label="Capital"
+          value={country.capital?.[0]}
+        />
 
-<Info
-  icon="earth"
-  label="Região"
-  value={country.region}
-/>
+        <Info
+          icon="earth"
+          label="Região"
+          value={country.region}
+        />
 
-<Info
-  icon="global"
-  label="Sub-região"
-  value={country.subregion}
-/>
+        <Info
+          icon="global"
+          label="Sub-região"
+          value={country.subregion}
+        />
 
-<Info
-  icon="clockcircle"
-  label="Fuso horário"
-  value={country.timezones?.[0]}
-/>
+        <Info
+          icon="clockcircle"
+          label="Fuso horário"
+          value={country.timezones?.[0]}
+        />
+
+        
+          <TouchableOpacity
+  onPress={() => {
+
+    console.log('clicou');
+
+    navigation.navigate(
+      'Favoritos',
+      {
+        name: country.name.common,
+        capital: country.capital?.[0],
+        flag: country.flags.png
+      }
+    )
+  }}
+          style={{
+            backgroundColor: '#2F6FDB',
+            height: 55,
+            borderRadius: 15,
+            justifyContent: 'center',
+            alignItems: 'center',
+            marginTop: 25,
+            flexDirection: 'row'
+          }}
+        >
+
+          <AntDesign
+            name="heart"
+            size={20}
+            color="#fff"
+          />
+
+          <Text style={{
+            color: '#fff',
+            marginLeft: 10,
+            fontWeight: 'bold',
+            fontSize: 16
+          }}>
+            Adicionar aos Favoritos
+          </Text>
+
+        </TouchableOpacity>
 
       </View>
 
